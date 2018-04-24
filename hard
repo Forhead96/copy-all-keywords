@@ -1,0 +1,52 @@
+#include <iostream>
+// this is an increment and decrement operators.
+// a/b is equals to this and c/d is equals to a
+// to divide a fraction you must flip the fraction around.
+//void a.operator+=(b); will still give a definition to even if it is turned into a comment
+// a+=b;
+//void operator-=(b);
+//void operator*=(b);
+//void operator/=(b);
+//whatever you meaning or variable you change in the cirle brackets() it does matter it can be anything when doing for example a void operator+=;
+class fraction
+{int x;
+	int y;
+public:
+	fraction(int x = 0; int y = 1);
+	void setX(int x);
+	void setY(int y);
+	void plus(const fraction &a);//this+=a; for the fraction of x and y
+	void minus(const fraction &a);//this-=a; for the fraction of x and y
+	void multiply(const fraction &a);//this*=a; for the fraction of x and y
+	void divide(const fraction &a);//this/= a; for the fraction of x and y
+	void fraction::setY(int y)
+	{
+		if (y != 0)
+			this->y = y;
+		else this->y = 1;
+	}
+	void fraction::plus(const fraction &a)
+	{
+		this->x = this->x*a.y + this->y*a.x;
+		this->y = this->y * a.y;
+	}
+
+	void fraction::minus(const fraction &a)
+	{
+		this->x = this->x*a.y - this->y*a.x;
+		this->y = this->y * a.y;
+	}
+
+	void fraction::multiply(const fraction &a)
+	{
+		this->x = this-> x * a.x;
+		this->y = this->y * a.y;
+	}
+
+	void fraction::divide(const fraction &a)
+	{
+		this->x = this->x * a.y;
+		this->y = this->y * a.x;
+	}
+
+};
